@@ -18,8 +18,8 @@ Key Features of ArrayList:
   It can automatically grow or shrink in size as elements are added or removed.
 - Not-synchronized: 
   It is not synchronized, which means multiple threads can access it concurrently without causing issues.
-- Dynamic Size:
-  It can automatically grow or shrink in size as elements are added or removed.
+- dynamic size:
+  Size can be changed dynamically.
 - Access:
   it offers O(1) constant-time access to elements by index, which means it can be accessed in constant time.
 - Insertion/Deletion: O(n) in middle .
