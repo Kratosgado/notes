@@ -30,3 +30,10 @@ A more complete and consistent set of LIFO stack operations is provided by the `
  - peek(): Returns the element at the top of the stack without removing it. It also throws an EmptyStackException if the stack is empty.
  - empty(): Tests if the stack is empty and returns a boolean value (true if empty, false otherwise).
  - search(Object o): Returns the 1-based position of an element from the top of the stack. If the item is not found, it returns -1
+
+## Modern Alternative (Deque)
+The `Deque` interface extends the `Collection` interface and adds additional methods to the existing `List` interface. It is designed to be used in preference to the `Stack` class.
+
+## Key Reasons to Use Deque
+- Performance(No Syncronization Overhead): Stack and Vector are synchronized (thread-safe), but Deque is not. This means every single op requires and releases a lock.
+- Cleaner API: Deque provides a cleaner API than Stack, which extends Vector and thereby inheriting numberous methods unecessarily.
