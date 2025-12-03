@@ -8,6 +8,7 @@ updated: 2025-12-03T07:57:50+0000
 version: 1.1.1
 @end
 
+# Stack
 The `Stack` class represents a last-in-first-out (LIFO) stack of objects.
 It extends class `Vector` with five operations that allow a vector to be treated as a stack.
 The usual `push` and `pop` operations are provided, as well as a method to `peek` at the top item on the stack,
@@ -17,6 +18,15 @@ When a stack is first created, it contains no items.
 
 A more complete and consistent set of LIFO stack operations is provided by the `Deque` interface and its implementations, which should be used in preference to this class. For example:
 
- 
+## Core Principles
+ - The behavior of a stack can be visualized like a physical stack of plates: you can only add a new plate to the top, and you can only take a plate from the top. 
+ - LIFO (Last-In, First-Out): The fundamental rule that governs how elements are accessed.
+ - Single-Ended Access: All insertions (push) and deletions (pop) happen at a single end, referred to as the "top" of the stack
 
-
+## Key Operations (Methods)
+ - The java.util.Stack class provides several methods for managing its elements: 
+ - push(E item): Adds an element to the top of the stack.
+ - pop(): Removes and returns the element from the top of the stack. It throws an EmptyStackException if the stack is empty.
+ - peek(): Returns the element at the top of the stack without removing it. It also throws an EmptyStackException if the stack is empty.
+ - empty(): Tests if the stack is empty and returns a boolean value (true if empty, false otherwise).
+ - search(Object o): Returns the 1-based position of an element from the top of the stack. If the item is not found, it returns -1
