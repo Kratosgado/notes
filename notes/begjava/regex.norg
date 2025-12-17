@@ -33,15 +33,90 @@ The primary classes are immutable and thread-safe where appropriate.
 
 #### . 
 - The dot metacharacter matches any character except a newline.
-- It is used to match any character except a newline.
 
 #### ^
 - The caret metacharacter matches the beginning of a line.
-- It is used to match the beginning of a line.
 
 #### $
 - The dollar sign metacharacter matches the end of a line.
-- It is used to match the end of a line.
 
-#### *
-- The asterisk metacharacter matches zero
+#### * 
+- The asterisk metacharacter matches zero or more of the preceding element.
+
+#### +
+- The plus sign metacharacter matches one or more of the preceding element.
+
+#### ?
+- The question mark metacharacter matches zero or one of the preceding element.
+
+#### { }
+- The curly braces metacharacters define a set of elements to be matched.
+  - The curly braces define a set of elements to be matched.
+  - The curly braces define a set of elements to be matched.
+    - { a, b, c } matches any of the characters a, b, or c.
+    - { a | b | c } matches any of the characters a, b, or c.
+    - { ^a } matches any character except a.
+    - { ^a | ^b } matches any character except a or b.
+    - { a* } matches zero or more a's.
+    - { a+ } matches one or more a's.
+    - { a? } matches zero or one a's.
+    - { ^a* } matches zero or more a's, but not a's at the beginning of the string.
+    - { ^a+ } matches one or more a's, but not a's at the beginning of the string.
+- { ^a } matches any character except a.
+- { ^a | ^b } matches any character except a or b.
+- { a* } matches zero or more a's.
+- { a+ } matches one or more a's.
+- { a? } matches zero or one a's.
+- { ^a* } matches zero or more a's, but not a's at the beginning of the string.
+- { ^a+ } matches one or more a's, but not a's at the beginning of the string.  
+
+### Character Classes
+- Character classes are used to match a specific character or set of characters.
+- Character classes are defined using the following syntax:
+  - \[ character class ] matches any character in the class.
+  - \[^ character class ] matches any character not in the class.
+  - \[ character class ] matches any character in the class.
+  - \[ character class ] matches any character in the class.
+
+#### \d
+- Matches any digit character.
+
+#### \D
+- Matches any non-digit character.
+
+#### \w
+- Matches any alphanumeric character.
+
+#### \W
+- Matches any non-alphanumeric character.
+
+#### \s
+- Matches any whitespace character.
+
+#### \S
+- Matches any non-whitespace character.
+
+#### \b
+- Matches a word boundary.
+
+#### \B
+- Matches a non-word boundary.
+
+#### \A
+- Matches the beginning of the input.
+
+#### \Z
+- Matches the end of the input.
+
+#### \z
+- Matches the end of the input, or before a newline at the end of the input.
+
+#### \G
+- Matches the position where the last match finished.
+
+#### \1
+- Matches the same text matched by the first capturing group of the regular expression.
+
+#### \2
+- Matches the same text matched by the second capturing group of the regular expression.
+
