@@ -31,24 +31,24 @@ The primary classes are immutable and thread-safe where appropriate.
 - Metacharacters are special characters that have a special meaning in a regular expression.
 - They are used to define the syntax of the regular expression.
 
-. -  Any character (except line terminator)
-\d - Digit [0-9]
-\D - Non-digit
-\w - Word character [a-zA-Z_0-9]
-\W - Non-word character
-\s - Whitespace
-\S - Non-whitespace
-. ^ - Start of line
-. $ - End of line
-. * - 0 or more
-  + - 1 or more
-  ? - 0 or 1
-  {n} - Exactly n times
-  {n,} -n or more
-  {n,m} -Between n and m
-  [abc] -Character class (a, b, or c)
-  [^abc] - Negated character class
-  (abc) -Grouping
+Category,Syntax,Description,Example
+Metacharacters,`. ^ $ * + ? { } [ ] \,( )`,Special meaning; escape with \ for literals.
+Character Classes,[abc] [a-z] [^abc],Match any one character in/out of set.,[a-zA-Z] for letters
+Predefined Classes,"\d (digit) \D (non-digit)
+\s (whitespace) \S
+\w (word char: [a-zA-Z0-9_]) \W",Shorthands for common sets.,\d+ matches numbers
+Quantifiers,"* (0+)
++ (1+)
+? (0 or 1)
+{n} (exactly n)
+{n,} (n+)
+{n,m} (n to m)","Greedy by default; add ? for reluctant (e.g., *?).","\d{3,5}: 3-5 digits"
+Anchors,"^ (start of line)
+$ (end)
+\b (word boundary)
+\B (non-boundary)",Position assertions.,^\d+ starts with digits
+Groups & Capturing,( ),Capture subgroups; access via matcher.group(1). Non-capturing: (?: ).,(\w+)\s(\w+) captures words
+Alternation,`,`,OR operator.
 
 * Key Pattern Flags (Modifiers)
   Used to change matching behavior:
