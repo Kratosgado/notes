@@ -8,3 +8,48 @@ updated: 2025-12-17T07:48:59+0000
 version: 1.1.1
 @end
 
+# REGEX (Regular Expressions)
+
+## What is a Regular Expression?
+- A regular expression is a pattern that describes a set of strings.
+- It is used to search for a pattern in a string.
+- It is used to validate a string against a pattern.
+
+## Regular Expression Syntax
+- Regular expression syntax is used to define the pattern to be matched.
+- It is used to define the syntax of the regular expression.
+
+# REGEX in Java
+
+## Pattern
+- Pattern is a class that represents a regular expression.
+- It is used to search for a pattern in a string.
+- It is used to create a Matcher object.
+
+## Matcher
+- Matcher is a class that represents the result of a match operation.
+- It is used to find the next occurrence of a pattern in a string.
+- It is used to find the start and end of a match.
+
+## Pattern Syntax
+- Pattern syntax is used to define the pattern to be matched.
+- It is used to define the syntax of the regular expression.
+
+### Metacharacters
+- Metacharacters are special characters that have a special meaning in a regular expression.
+- They are used to define the syntax of the regular expression.
+
+#### . 
+- The dot metacharacter matches any character except a newline.
+- It is used to match any character except a newline.
+
+#### ^
+- The caret metacharacter matches the beginning of a line.
+- It is used to match the beginning of a line.
+
+#### $
+- The dollar sign metacharacter matches the end of a line.
+- It is used to match the end of a line.
+
+#### *
+- The asterisk metacharacter matches zero
