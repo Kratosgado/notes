@@ -17,106 +17,51 @@ version: 1.1.1
 # REGEX in Java (Core Classes)
 The primary classes are immutable and thread-safe where appropriate.
 
-- Pattern: 
+* Pattern: 
   > Represents a compiled regex. No public constructor—use Pattern.compile(String regex) or Pattern.compile(String regex, int flags).
   > Throws PatternSyntaxException if the regex is invalid.
 
-- Matcher: Engine that interprets the pattern and performs matching operations on the input strings (CharSequence).
+* Matcher: Engine that interprets the pattern and performs matching operations on the input strings (CharSequence).
   > Created via pattern.matcher(String input).
 
-- PatternSyntaxException: Unchecked exception for syntax errors.
+* PatternSyntaxException: Unchecked exception for syntax errors.
   > Quick static check: boolean matches = Pattern.matches("\\d+", "123"); (true if entire string matches).
 
 ### Metacharacters
 - Metacharacters are special characters that have a special meaning in a regular expression.
 - They are used to define the syntax of the regular expression.
 
-#### . 
-- The dot metacharacter matches any character except a newline.
+. -  Any character (except line terminator)
+\d - Digit [0-9]
+\D - Non-digit
+\w - Word character [a-zA-Z_0-9]
+\W - Non-word character
+\s - Whitespace
+\S - Non-whitespace
+. ^ - Start of line
+. $ - End of line
+. * - 0 or more
+  + - 1 or more
+  ? - 0 or 1
+  {n} - Exactly n times
+  {n,} -n or more
+  {n,m} -Between n and m
+  [abc] -Character class (a, b, or c)
+  [^abc] - Negated character class
+  (abc) -Grouping
 
-#### ^
-- The caret metacharacter matches the beginning of a line.
+* Common Methods in Matcher
+ - matches() → entire string must match pattern
+ - find() → finds next subsequence that matches (for partial matches)
+ - lookingAt() → matches from start, but doesn’t require full string
+ - group() → returns matched substring
+ - replaceAll(String) / replaceFirst(String) → replace matched parts
 
-#### $
-- The dollar sign metacharacter matches the end of a line.
+* String Class Convenience Methods
+   Java’s String has built-in regex support:
 
-#### * 
-- The asterisk metacharacter matches zero or more of the preceding element.
-
-#### +
-- The plus sign metacharacter matches one or more of the preceding element.
-
-#### ?
-- The question mark metacharacter matches zero or one of the preceding element.
-
-#### { }
-- The curly braces metacharacters define a set of elements to be matched.
-  - The curly braces define a set of elements to be matched.
-  - The curly braces define a set of elements to be matched.
-    - { a, b, c } matches any of the characters a, b, or c.
-    - { a | b | c } matches any of the characters a, b, or c.
-    - { ^a } matches any character except a.
-    - { ^a | ^b } matches any character except a or b.
-    - { a* } matches zero or more a's.
-    - { a+ } matches one or more a's.
-    - { a? } matches zero or one a's.
-    - { ^a* } matches zero or more a's, but not a's at the beginning of the string.
-    - { ^a+ } matches one or more a's, but not a's at the beginning of the string.
-- { ^a } matches any character except a.
-- { ^a | ^b } matches any character except a or b.
-- { a* } matches zero or more a's.
-- { a+ } matches one or more a's.
-- { a? } matches zero or one a's.
-- { ^a* } matches zero or more a's, but not a's at the beginning of the string.
-- { ^a+ } matches one or more a's, but not a's at the beginning of the string.  
-
-### Character Classes
-- Character classes are used to match a specific character or set of characters.
-- Character classes are defined using the following syntax:
-  - \[ character class ] matches any character in the class.
-  - \[^ character class ] matches any character not in the class.
-  - \[ character class ] matches any character in the class.
-  - \[ character class ] matches any character in the class.
-
-#### \d
-- Matches any digit character.
-
-#### \D
-- Matches any non-digit character.
-
-#### \w
-- Matches any alphanumeric character.
-
-#### \W
-- Matches any non-alphanumeric character.
-
-#### \s
-- Matches any whitespace character.
-
-#### \S
-- Matches any non-whitespace character.
-
-#### \b
-- Matches a word boundary.
-
-#### \B
-- Matches a non-word boundary.
-
-#### \A
-- Matches the beginning of the input.
-
-#### \Z
-- Matches the end of the input.
-
-#### \z
-- Matches the end of the input, or before a newline at the end of the input.
-
-#### \G
-- Matches the position where the last match finished.
-
-#### \1
-- Matches the same text matched by the first capturing group of the regular expression.
-
-#### \2
-- Matches the same text matched by the second capturing group of the regular expression.
+  - matches(String regex)
+  - split(String regex)
+  - replaceAll(String regex, String replacement)
+  - replaceFirst(String regex, String replacement)
 
