@@ -12,28 +12,20 @@ version: 1.1.1
 
 ## What is a Regular Expression?
 - A regular expression is a pattern that describes a set of strings.
-- It is used to search for a pattern in a string.
-- It is used to validate a string against a pattern.
+- Regex allows pattern matching, searching, validation, and text manipulation. Here's a structured overview of the main things to know for a presentation.
 
-## Regular Expression Syntax
-- Regular expression syntax is used to define the pattern to be matched.
-- It is used to define the syntax of the regular expression.
+# REGEX in Java (Core Classes)
+The primary classes are immutable and thread-safe where appropriate.
 
-# REGEX in Java
+- Pattern: 
+  > Represents a compiled regex. No public constructor—use Pattern.compile(String regex) or Pattern.compile(String regex, int flags).
+  > Throws PatternSyntaxException if the regex is invalid.
 
-## Pattern
-- Pattern is a class that represents a regular expression.
-- It is used to search for a pattern in a string.
-- It is used to create a Matcher object.
+- Matcher: Engine that interprets the pattern and performs matching operations on the input strings (CharSequence).
+  > Created via pattern.matcher(String input).
 
-## Matcher
-- Matcher is a class that represents the result of a match operation.
-- It is used to find the next occurrence of a pattern in a string.
-- It is used to find the start and end of a match.
-
-## Pattern Syntax
-- Pattern syntax is used to define the pattern to be matched.
-- It is used to define the syntax of the regular expression.
+- PatternSyntaxException: Unchecked exception for syntax errors.
+  > Quick static check: boolean matches = Pattern.matches("\\d+", "123"); (true if entire string matches).
 
 ### Metacharacters
 - Metacharacters are special characters that have a special meaning in a regular expression.
