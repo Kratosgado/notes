@@ -50,6 +50,14 @@ The primary classes are immutable and thread-safe where appropriate.
   [^abc] - Negated character class
   (abc) -Grouping
 
+* Key Pattern Flags (Modifiers)
+  Used to change matching behavior:
+
+  - Pattern.CASE_INSENSITIVE → ignore case
+  - Pattern.MULTILINE → ^ and $ match start/end of each line
+  - Pattern.DOTALL → . matches newline too
+  - Pattern.UNICODE_CASE, Pattern.COMMENTS, etc.
+
 * Common Methods in Matcher
  - matches() → entire string must match pattern
  - find() → finds next subsequence that matches (for partial matches)
@@ -65,3 +73,16 @@ The primary classes are immutable and thread-safe where appropriate.
   - replaceAll(String regex, String replacement)
   - replaceFirst(String regex, String replacement)
 
+* Pitfalls & Best Practices
+  - Escape backslashes: "\\d" not "\d"
+  - Compile once, reuse: Avoid recompiling the same pattern repeatedly in loops
+  - Beware of catastrophic backtracking: Complex patterns on long inputs can hang
+  - Use raw strings? → Not in Java (until Java 21+ with preview feature for raw string literals—but still not standard for regex)
+  - Validate input: Regex alone isn’t enough for complex validations (e.g., email, URL)
+
+* Practical Use Cases
+  - Input validation (emails, phone numbers, ZIP codes)
+  - Log parsing
+  - Data extraction (e.g., scraping patterns from text)
+  - Search-and-replace operations
+  - Tokenizing strings
